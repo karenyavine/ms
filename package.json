@@ -10,7 +10,9 @@
   "scripts": {
     "precommit": "lint-staged",
     "lint": "eslint lib/* bin/*",
-    "test": "mocha tests.js"
+    "test": "mocha tests.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -33,5 +35,9 @@
     "husky": "0.13.3",
     "lint-staged": "3.4.0",
     "mocha": "3.0.2"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.316.1"
   }
 }
